@@ -61,9 +61,9 @@ def preprocess_sample_data(data, scaler=None):
 
 # Sample data
 sample_data = {
-    'From': "BOM", 'To': "DEL",
-    'Departure Delay': 56,
-    'Airline': "Spice Jet",
+    'From': "BOM", 'To': "HYD",
+    'Departure Delay': 14,
+    'Airline': "Indigo",
     'Simplified_Weather': "Sunny",
     'Distance Category': "501-1000 km",
     'Distance': 669, 'Airline Rating': 0.5,
