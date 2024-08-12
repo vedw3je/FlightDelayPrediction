@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from model import X
 
 # Load the trained model
-model_filename = 'flight_delay_prediction_model_lightgbm_optimized.pkl'
+model_filename = 'flight_delay_prediction_model_lightgbm_bayesian.pkl'
 loaded_model = joblib.load(model_filename)
 
 
@@ -61,17 +61,17 @@ def preprocess_sample_data(data, scaler=None):
 
 # Sample data
 sample_data = {
-    'From': "BOM", 'To': "HYD",
-    'Departure Delay': 14,
-    'Airline': "Indigo",
-    'Simplified_Weather': "Sunny",
-    'Distance Category': "501-1000 km",
-    'Distance': 669, 'Airline Rating': 0.5,
-    'Airport Rating': 0.1
+    'From': "MUM", 'To': "DEL",
+    'Departure Delay': 40,
+    'Airline': "Air India",
+    'Simplified_Weather': "Cloudy",
+    'Distance Category': "1001-1500 km",
+    'Distance': 1322, 'Airline Rating': 0.1,
+
 }
 
 # Load the scaler used during training
-scaler_filename = 'scaler.pkl'  # Adjust the filename if needed
+scaler_filename = 'scaleroptimize.pkl'  # Adjust the filename if needed
 scaler = joblib.load(scaler_filename)
 
 # Preprocess sample data
