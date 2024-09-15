@@ -8,14 +8,14 @@ from model import *  # Assuming model-related imports and setup are here
 def objective(trial):
     # Define the hyperparameters to tune
     param_grid = {
-        'n_estimators': trial.suggest_int('n_estimators', 100, 500),
-        'learning_rate': trial.suggest_loguniform('learning_rate', 0.001, 0.1),
-        'max_depth': trial.suggest_int('max_depth', -1, 50),
-        'min_child_samples': trial.suggest_int('min_child_samples', 5, 50),
-        'feature_fraction': trial.suggest_uniform('feature_fraction', 0.6, 0.9),
-        'bagging_fraction': trial.suggest_uniform('bagging_fraction', 0.6, 0.9),
-        'lambda_l1': trial.suggest_uniform('lambda_l1', 0, 1),
-        'lambda_l2': trial.suggest_uniform('lambda_l2', 0, 1)
+        'n_estimators': trial.suggest_int('n_estimators', 100, 1000),
+        'learning_rate': trial.suggest_loguniform('learning_rate', 0.0001, 0.1),
+        'max_depth': trial.suggest_int('max_depth', -1, 100),
+        'min_child_samples': trial.suggest_int('min_child_samples', 1, 100),
+        'feature_fraction': trial.suggest_uniform('feature_fraction', 0.5, 1.0),
+        'bagging_fraction': trial.suggest_uniform('bagging_fraction', 0.5, 1.0),
+        'lambda_l1': trial.suggest_uniform('lambda_l1', 0, 2.0),
+        'lambda_l2': trial.suggest_uniform('lambda_l2', 0, 2.0)
     }
 
     # Initialize the model with the hyperparameters
@@ -24,7 +24,7 @@ def objective(trial):
     # Train the model with early stopping
     model.fit(X_train, y_train,
               eval_set=[(X_test, y_test)],
-            )
+             )
 
     # Make predictions
     y_pred = model.predict(X_test)
