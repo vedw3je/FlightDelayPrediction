@@ -25,7 +25,31 @@ def preprocess_sample_data(data, scaler=None):
         'Clear': 'Clear',
         'Thundery outbreaks possible': 'Storm',
         'Light rain shower': 'Rain',
-        'Moderate or heavy rain shower': 'Rain'
+        'Moderate or heavy rain shower': 'Rain',
+        'Overcast': 'Cloudy',
+        'Showers': 'Rain',
+        'Heavy rain': 'Rain',
+        'Thunderstorm': 'Storm',
+        'Drizzle': 'Rain',
+        'Fog': 'Cloudy',
+        'Mist': 'Cloudy',
+        'Snow': 'Storm',
+        'Sleet': 'Storm',
+        'Hail': 'Storm',
+        'Light freezing rain': 'Storm',
+        'Freezing rain': 'Storm',
+        'Ice pellets': 'Storm',
+        'Light snow': 'Storm',
+        'Moderate snow': 'Storm',
+        'Heavy snow': 'Storm',
+        'Blizzard': 'Storm',
+        'Dust': 'Clear',  # Typically not significant in terms of weather impact
+        'Sand': 'Clear',  # Similarly, often considered clear with reduced visibility
+        'Smoke': 'Cloudy',  # Can obscure visibility and create hazy conditions
+        'Volcanic ash': 'Storm',  # Can be severe and impact travel significantly
+        'Squalls': 'Storm',  # Intense bursts of wind and precipitation
+        'Gusts': 'Storm',  # Strong wind that can accompany storms
+        'High winds': 'Storm',  # Can cause dangerous conditions
     }
 
     # Convert sample data to DataFrame
